@@ -56,7 +56,7 @@ const ContactPage = () => {
             }
       };
 
-      const resumeLink = '../../Assets/Samrat_Mallick_Resume.pdf';
+      // const resumeLink = '../../Assets/Samrat_Mallick_Resume.pdf';
 
       return (
             <div className='flex flex-col gap-4 w-full lg:py-6 lg:px-24 md:p-8 p-4'>
@@ -104,7 +104,7 @@ const ContactPage = () => {
                                           <FontAwesomeIcon icon={faGithubAlt} />
                                     </Link>
                               </div>
-                              <a href={resumeLink} download className='w-full max-w-[200px] flex items-center justify-center py-3 border-2 border-secondary hover:border-bg2 rounded-md text-lg text-secondary bg-bg2 hover:bg-secondary hover:text-bg2 transition duration-500 ease-linear font-semibold'>Download CV</a>
+                              <a href='../../Assets/Samrat_Mallick_Resume.pdf' download className='w-full max-w-[200px] flex items-center justify-center py-3 border-2 border-secondary hover:border-bg2 rounded-md text-lg text-secondary bg-bg2 hover:bg-secondary hover:text-bg2 transition duration-500 ease-linear font-semibold'>Download CV</a>
                         </div>
                         <div className="md:w-1/2 w-full flex items-center justify-center">
                               <form name='submit-to-google-sheet' className='w-full max-w-lg flex flex-col p-4 md:p-6 lg:p-8 bg-primary rounded shadow-xl gap-4' onSubmit={handleSubmit}>
