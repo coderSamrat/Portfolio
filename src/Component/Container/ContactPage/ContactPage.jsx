@@ -56,7 +56,7 @@ const ContactPage = () => {
             }
       };
 
-      const resumeLink = '/Assets/Samrat_Mallick_Resume.pdf';
+      const resumeLink = '../../Assets/Samrat_Mallick_Resume.pdf';
 
       return (
             <div className='flex flex-col gap-4 w-full lg:py-6 lg:px-24 md:p-8 p-4'>
