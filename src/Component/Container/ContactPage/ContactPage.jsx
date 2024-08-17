@@ -14,6 +14,20 @@ const ContactPage = () => {
       const handleSubmit = async (e) => {
             e.preventDefault();
 
+            if (!name || !email || !message) {
+                  toast.error('Please fill in all required fields.', {
+                        position: "bottom-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light"
+                  });
+                  return;
+            }
+
             const formData = new FormData(e.target);
             const scriptURL = 'https://script.google.com/macros/s/AKfycbx5sFsRBhE-_hD323mGo1n9bX1VJ24gagXc_-KEjA3BBV4yaJLle67ODldzPBQDLt9V/exec';
 
@@ -30,8 +44,12 @@ const ContactPage = () => {
                               progress: undefined,
                               theme: "light"
                         });
+                        setName('');
+                        setEmail('');
+                        setPhone('');
+                        setMessage('');
                   } else {
-                        toast.error('Please fill in all fields.', {
+                        toast.error('There was an issue sending your message. Please try again later.', {
                               position: "bottom-right",
                               autoClose: 3000,
                               hideProgressBar: false,
@@ -43,7 +61,7 @@ const ContactPage = () => {
                         });
                   }
             } catch (error) {
-                  toast.error('Please fill in all fields.', {
+                  toast.error('An unexpected error occurred. Please try again later.', {
                         position: "bottom-right",
                         autoClose: 3000,
                         hideProgressBar: false,
@@ -55,8 +73,6 @@ const ContactPage = () => {
                   });
             }
       };
-
-      // const resumeLink = '../../Assets/Samrat_Mallick_Resume.pdf';
 
       return (
             <div className='flex flex-col gap-4 w-full lg:py-6 lg:px-24 md:p-8 p-4'>
@@ -104,7 +120,6 @@ const ContactPage = () => {
                                           <FontAwesomeIcon icon={faGithubAlt} />
                                     </Link>
                               </div>
-                              <a href='../../Assets/Samrat_Mallick_Resume.pdf' download className='w-full max-w-[200px] flex items-center justify-center py-3 border-2 border-secondary hover:border-bg2 rounded-md text-lg text-secondary bg-bg2 hover:bg-secondary hover:text-bg2 transition duration-500 ease-linear font-semibold'>Download CV</a>
                         </div>
                         <div className="md:w-1/2 w-full flex items-center justify-center">
                               <form name='submit-to-google-sheet' className='w-full max-w-lg flex flex-col p-4 md:p-6 lg:p-8 bg-primary rounded shadow-xl gap-4' onSubmit={handleSubmit}>
