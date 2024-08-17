@@ -11,7 +11,6 @@ import ProjectPreview from "./Container/HomeContent/ProjectPreview/ProjectPrevie
 import ViewMore from "./Container/HomeContent/ProjectPreview/ViewMore";
 import UsingTechnology from "./Container/HomeContent/UsingTechnology/UsingTechnology";
 import SayHello from './Container/HomeContent/SayHello/SayHello';
-import LeftSider from "./LeftSider/LeftSider";
 import ProjectDisplay from "./Container/ProjectDisplay/ProjectDisplay";
 import ContactPage from "./Container/ContactPage/ContactPage";
 
@@ -29,7 +28,6 @@ export {
       ViewMore,
       UsingTechnology,
       SayHello,
-      LeftSider,
       ProjectDisplay,
       ContactPage
 };
