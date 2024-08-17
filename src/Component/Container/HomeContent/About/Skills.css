@@ -1,0 +1,14 @@
+.tab-links::after{
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: #FFCC00;
+      left: 3px;
+      bottom: -8px;
+      transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+      width: 50%;
+}

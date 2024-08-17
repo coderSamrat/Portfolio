@@ -1,0 +1,9 @@
+.preview_title::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #94a3b8;
+      left: 0;
+      bottom: -12px;
+}
