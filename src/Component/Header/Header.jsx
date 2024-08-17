@@ -71,6 +71,7 @@ const Header = () => {
                                                                         hover:text-teal-400 transition duration-300 ease-linear`
                                                                   )
                                                             }
+                                                            onClick={() => window.scrollTo(0, 0)}
                                                       >
                                                             {link.name}
                                                       </NavLink>
