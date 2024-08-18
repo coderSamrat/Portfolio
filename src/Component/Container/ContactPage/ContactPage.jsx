@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithubAlt, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import resume from '../../Assets/Samrat_Mallick_Resume.pdf';
+import resume from '../../Assets/Resume.pdf';
 
 const ContactPage = () => {
       const [name, setName] = React.useState('');
