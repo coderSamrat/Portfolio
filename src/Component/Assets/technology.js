@@ -6,6 +6,7 @@ import technology_5 from './technology_5.png';
 import technology_6 from './technology_6.png';
 import technology_7 from './technology_7.png';
 import technology_8 from './technology_8.png';
+import technology_9 from './technology_9.png';
 
 const technology = [
       {
@@ -39,6 +40,10 @@ const technology = [
       {
             id: 8,
             image: technology_8
+      },
+      {
+            id: 9,
+            image: technology_9
       }
 ];
 export default technology;

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithubAlt, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import resume from '../../Assets/Resume.pdf';
 
 const ContactPage = () => {
       const [name, setName] = React.useState('');
@@ -120,6 +121,7 @@ const ContactPage = () => {
                                           <FontAwesomeIcon icon={faGithubAlt} />
                                     </Link>
                               </div>
+                              <a href={resume} download='Samrat_Mallick_Resume' className='md:px-12 px-4 py-3 border-2 border-primary rounded-lg md:text-lg text-md text-primary bg-bg2 hover:bg-primary hover:text-bg2 hover:border-bg2 transition duration-500 ease-linear font-semibold'>Dowload Resume</a>
                         </div>
                         <div className="md:w-1/2 w-full flex items-center justify-center">
                               <form name='submit-to-google-sheet' className='w-full max-w-lg flex flex-col p-4 md:p-6 lg:p-8 bg-primary rounded shadow-xl gap-4' onSubmit={handleSubmit}>
