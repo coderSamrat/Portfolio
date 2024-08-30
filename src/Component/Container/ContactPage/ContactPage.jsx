@@ -83,7 +83,9 @@ const ContactPage = () => {
                   <div className="w-full flex flex-col md:flex-row items-center gap-4">
                         <div className="md:w-1/2 w-full flex flex-col items-center justify-center gap-8">
                               <ContactDetail label="Name" value="Samrat Mallick" />
-                              <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India" />
+                              <Link to='https://maps.app.goo.gl/efrh3XMrnhz2VnSu9' >
+                                    <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India"  />
+                              </Link>
                               <ContactDetail label="Email" value={<a href='mailto:samratmallick832@gmail.com' className='text-base md:text-[16px] italic font-semibold cursor-pointer text-secondary hover:underline'>samratmallick832@gmail.com</a>} />
                               <ContactDetail label="Phone" value={<a href='tel:+919883203654' className='text-base md:text-[16px] italic font-semibold cursor-pointer text-secondary hover:underline'>+91-9883203654</a>} />
                               <div className="flex gap-6 text-sky-600 md:text-2xl text-xl">
