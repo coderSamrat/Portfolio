@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithubAlt, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -6,12 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ContactPage = () => {
-      const [name, setName] = React.useState('');
-      const [email, setEmail] = React.useState('');
-      const [phone, setPhone] = React.useState('');
-      const [message, setMessage] = React.useState('');
+      const [name, setName] = useState('');
+      const [email, setEmail] = useState('');
+      const [phone, setPhone] = useState('');
+      const [message, setMessage] = useState('');
+      const [isLoading, setLoading] = useState(false);
 
-      const handleSubmit = async (e) => {
+      const handleSubmit = (e) => {
             e.preventDefault();
 
             if (!name || !email || !message || !phone) {
@@ -28,13 +29,36 @@ const ContactPage = () => {
                   return;
             }
 
+            setLoading(true);
+
             const formData = new FormData(e.target);
             const scriptURL = 'https://script.google.com/macros/s/AKfycbx5sFsRBhE-_hD323mGo1n9bX1VJ24gagXc_-KEjA3BBV4yaJLle67ODldzPBQDLt9V/exec';
 
-            try {
-                  const response = await fetch(scriptURL, { method: 'POST', body: formData });
-                  if (response.ok) {
-                        toast.success('Your message has been sent.', {
+            fetch(scriptURL, { method: 'POST', body: formData })
+                  .then(response => {
+                        setLoading(false);
+                        if (response.ok) {
+                              toast.success('Your message has been sent.', {
+                                    position: "bottom-right",
+                                    autoClose: 3000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: false,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: "light"
+                              });
+                              setName('');
+                              setEmail('');
+                              setPhone('');
+                              setMessage('');
+                        } else {
+                              throw new Error('There was an issue sending your message. Please try again later.');
+                        }
+                  })
+                  .catch(error => {
+                        setLoading(false);
+                        toast.error('An unexpected error occurred. Please try again later.', {
                               position: "bottom-right",
                               autoClose: 3000,
                               hideProgressBar: false,
@@ -44,34 +68,7 @@ const ContactPage = () => {
                               progress: undefined,
                               theme: "light"
                         });
-                        setName('');
-                        setEmail('');
-                        setPhone('');
-                        setMessage('');
-                  } else {
-                        toast.error('There was an issue sending your message. Please try again later.', {
-                              position: "bottom-right",
-                              autoClose: 3000,
-                              hideProgressBar: false,
-                              closeOnClick: true,
-                              pauseOnHover: false,
-                              draggable: true,
-                              progress: undefined,
-                              theme: "light"
-                        });
-                  }
-            } catch (error) {
-                  toast.error('An unexpected error occurred. Please try again later.', {
-                        position: "bottom-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: false,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light"
                   });
-            }
       };
 
       return (
@@ -84,7 +81,7 @@ const ContactPage = () => {
                         <div className="md:w-1/2 w-full flex flex-col items-center justify-center gap-8">
                               <ContactDetail label="Name" value="Samrat Mallick" />
                               <Link to='https://maps.app.goo.gl/efrh3XMrnhz2VnSu9' >
-                                    <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India"  />
+                                    <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India" />
                               </Link>
                               <ContactDetail label="Email" value={<a href='mailto:samratmallick832@gmail.com' className='text-base md:text-[16px] italic font-semibold cursor-pointer text-secondary hover:underline'>samratmallick832@gmail.com</a>} />
                               <ContactDetail label="Phone" value={<a href='tel:+919883203654' className='text-base md:text-[16px] italic font-semibold cursor-pointer text-secondary hover:underline'>+91-9883203654</a>} />
@@ -131,7 +128,9 @@ const ContactPage = () => {
                                     <FormField id="Email" type="email" placeholder="Enter Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <FormField id="Phone" type="tel" placeholder="Enter Your Phone Number" pattern="[0-9]{10}" maxLength="10" inputMode="numeric" value={phone} onChange={(e) => setPhone(e.target.value)} />
                                     <FormField id="Message" type="textarea" placeholder="Enter Your Message" rows="5" value={message} onChange={(e) => setMessage(e.target.value)} />
-                                    <button type='submit' className='md:px-8 px-3 py-2 border border-secondary rounded md:text-lg text-md text-primary bg-secondary hover:bg-primary hover:text-secondary transition duration-500 ease-linear font-semibold'>Send Message</button>
+                                    <button type='submit' className={`md:px-8 px-3 py-2 border border-secondary rounded md:text-lg text-md text-primary bg-secondary hover:bg-primary hover:text-secondary transition duration-500 ease-linear font-semibold ${isLoading ? 'opacity-50 pointer-events-none' : ''}`}>
+                                          {isLoading ? 'Sending...' : 'Send Message'}
+                                    </button>
                                     <ToastContainer />
                               </form>
                         </div>
@@ -155,7 +154,6 @@ const FormField = ({ id, type, placeholder, rows, pattern, maxLength, inputMode,
                         placeholder={placeholder}
                         rows={rows}
                         className='px-4 py-2 rounded-lg bg-bg text-secondary text-md outline-none resize-none focus:ring-1 focus:ring-secondary'
-                        required
                         value={value}
                         onChange={onChange}
                   />
@@ -169,7 +167,6 @@ const FormField = ({ id, type, placeholder, rows, pattern, maxLength, inputMode,
                         maxLength={maxLength}
                         inputMode={inputMode}
                         className='px-4 py-2 rounded-lg bg-bg text-secondary text-md outline-none ring-0 focus:ring-1 focus:ring-secondary'
-                        required
                         value={value}
                         onChange={onChange}
                   />
