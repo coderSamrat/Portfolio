@@ -14,7 +14,7 @@ const ContactPage = () => {
       const handleSubmit = async (e) => {
             e.preventDefault();
 
-            if (!name || !email || !message) {
+            if (!name || !email || !message || !phone) {
                   toast.error('Please fill in all required fields.', {
                         position: "bottom-right",
                         autoClose: 3000,
