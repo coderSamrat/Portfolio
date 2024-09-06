@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithubAlt, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 const ContactPage = () => {
       const [name, setName] = useState('');
@@ -58,6 +59,7 @@ const ContactPage = () => {
                   })
                   .catch(error => {
                         setLoading(false);
+                        console.error("There was an error sending your message", + error);
                         toast.error('An unexpected error occurred. Please try again later.', {
                               position: "bottom-right",
                               autoClose: 3000,
@@ -80,7 +82,7 @@ const ContactPage = () => {
                   <div className="w-full flex flex-col md:flex-row items-center gap-4">
                         <div className="md:w-1/2 w-full flex flex-col items-center justify-center gap-8">
                               <ContactDetail label="Name" value="Samrat Mallick" />
-                              <Link to='https://maps.app.goo.gl/efrh3XMrnhz2VnSu9' >
+                              <Link to='https://maps.app.goo.gl/8t4Xu1Y7B8k3iRav8' >
                                     <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India" />
                               </Link>
                               <ContactDetail label="Email" value={<a href='mailto:samratmallick832@gmail.com' className='text-base md:text-[16px] italic font-semibold cursor-pointer text-secondary hover:underline'>samratmallick832@gmail.com</a>} />
@@ -118,6 +120,14 @@ const ContactPage = () => {
                                     >
                                           <FontAwesomeIcon icon={faGithubAlt} />
                                     </Link>
+                                    <Link
+                                          to="https://maps.app.goo.gl/8t4Xu1Y7B8k3iRav8"
+                                          target="_blank"
+                                          aria-label="My Location"
+                                          className="md:w-12 w-8 md:h-12 h-8 rounded-full flex items-center justify-center shadow-3xl hover:shadow-5xl transition-shadow duration-300"
+                                    >
+                                          <FontAwesomeIcon icon={faLocationDot} />
+                                    </Link>
                               </div>
                               <Link to='https://drive.google.com/file/d/17Cqn6_Adm8LWnEnHGS1En0vXApdC0ZLG/view?usp=sharing' download='Samrat_Mallick_Resume' className='md:px-12 px-4 py-3 border-2 border-primary rounded-lg md:text-lg text-md text-primary bg-bg2 hover:bg-primary hover:text-bg2 hover:border-bg2 transition duration-500 ease-linear font-semibold'>Dowload CV</Link>
                         </div>
@@ -141,7 +151,7 @@ const ContactPage = () => {
 
 const ContactDetail = ({ label, value }) => (
       <div className='text-lg md:text-xl font-bold text-gray-300'>
-            {label} : <span className='text-base md:text-[16px] italic font-semibold text-secondary'>{value}</span>
+            {label} : <span className='text-base md:text-[16px] italic font-semibold text-secondary cursor-pointer'>{value}</span>
       </div>
 );
 
