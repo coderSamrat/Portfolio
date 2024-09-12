@@ -5,6 +5,7 @@ import { faFacebookF, faGithubAlt, faInstagram, faLinkedinIn } from '@fortawesom
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import samrat from '../../Assets/Samrat.jpg';
 
 const ContactPage = () => {
       const [name, setName] = useState('');
@@ -81,6 +82,7 @@ const ContactPage = () => {
                   </header>
                   <div className="w-full flex flex-col md:flex-row items-center gap-4">
                         <div className="md:w-1/2 w-full flex flex-col items-center justify-center gap-8">
+                              <img src={samrat} className='w-32 h-32 rounded-full' />
                               <ContactDetail label="Name" value="Samrat Mallick" />
                               <Link to='https://maps.app.goo.gl/8t4Xu1Y7B8k3iRav8' >
                                     <ContactDetail label="Address" value="Habra, North 24 Parganas, West Bengal, India" />
