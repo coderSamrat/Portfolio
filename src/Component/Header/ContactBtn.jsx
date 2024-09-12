@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const ContactBtn = (props) => {
       return (
-            <NavLink to='/contact'
+            <NavLink to='/contact' 
+                  onClick={() => window.scrollTo(0, 0)}
                   className={({ isActive }) => (
                         `md:px-8 px-3 py-2 border border-secondary rounded md:text-lg text-md 
                         ${isActive ? "bg-secondary text-primary" : "bg-primary  text-secondary"}
