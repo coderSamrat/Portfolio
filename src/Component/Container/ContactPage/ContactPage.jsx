@@ -138,7 +138,9 @@ const ContactPage = () => {
                                     <FormField id="Email" type="email" placeholder="Enter Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <FormField id="Phone" type="tel" placeholder="Enter Your Phone Number" pattern="[0-9]{10}" maxLength="10" inputMode="numeric" value={phone} onChange={(e) => setPhone(e.target.value)} />
                                     <FormField id="Message" type="textarea" placeholder="Enter Your Message" rows="5" value={message} onChange={(e) => setMessage(e.target.value)} />
-                                    <button type='submit' className={`md:px-8 px-3 py-2 border border-secondary rounded md:text-lg text-md text-primary bg-secondary hover:bg-primary hover:text-secondary transition duration-500 ease-linear font-semibold ${isLoading ? 'opacity-50 pointer-events-none' : ''}`}>
+                                    <button type='submit'
+                                          className={`md:px-8 px-3 py-2 border border-secondary rounded md:text-lg text-md text-primary bg-secondary hover:bg-primary hover:text-secondary transition duration-500 ease-linear 
+                                          font-semibold ${isLoading ? 'opacity-50 pointer-events-none' : ''}`}>
                                           {isLoading ? 'Sending...' : 'Send Message'}
                                     </button>
                                     <ToastContainer />
