@@ -7,6 +7,10 @@ import technology_6 from './technology_6.png';
 import technology_7 from './technology_7.png';
 import technology_8 from './technology_8.png';
 import technology_9 from './technology_9.jpg';
+import technology_10 from './technology_10.png';
+import technology_11 from './technology_11.png';
+import technology_12 from './technology_12.png';
+import technology_13 from './technology_13.png';
 
 const technology = [
       {
@@ -38,12 +42,28 @@ const technology = [
             image: technology_7
       },
       {
+            id: 10,
+            image: technology_10
+      },
+      {
+            id: 11,
+            image: technology_11
+      },
+      {
+            id: 12,
+            image: technology_12
+      },
+      {
             id: 8,
             image: technology_8
       },
       {
+            id: 13,
+            image: technology_13
+      },
+      {
             id: 9,
             image: technology_9
-      }
+      },
 ];
 export default technology;
