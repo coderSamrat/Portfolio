@@ -131,7 +131,7 @@ const ContactPage = () => {
                                           <FontAwesomeIcon icon={faLocationDot} />
                                     </Link>
                               </div>
-                              <Link to='https://drive.google.com/file/d/17Cqn6_Adm8LWnEnHGS1En0vXApdC0ZLG/view?usp=sharing' download='Samrat_Mallick_Resume' className='md:px-12 px-4 py-3 border-2 border-primary rounded-lg md:text-lg text-md text-primary bg-bg2 hover:bg-primary hover:text-bg2 hover:border-bg2 transition duration-500 ease-linear font-semibold'>Dowload CV</Link>
+                              <Link to='https://drive.google.com/file/d/1AqLKP-jAFg1sdvj3Jz5AlMoSz-eOEnbp/view?usp=sharing' download='Samrat_Mallick_Resume' className='md:px-12 px-4 py-3 border-2 border-primary rounded-lg md:text-lg text-md text-primary bg-bg2 hover:bg-primary hover:text-bg2 hover:border-bg2 transition duration-500 ease-linear font-semibold'>Dowload CV</Link>
                         </div>
                         <div className="md:w-1/2 w-full flex items-center justify-center">
                               <form name='submit-to-google-sheet' className='w-full max-w-lg flex flex-col p-4 md:p-6 lg:p-8 bg-primary rounded shadow-xl gap-4' onSubmit={handleSubmit}>
