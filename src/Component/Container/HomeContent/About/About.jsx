@@ -12,7 +12,13 @@ const About = () => {
                         <h1 className='md:text-7xl text-4xl text-bg2 font-bold md:text-start text-center'>About Me</h1>
                         <div className='flex flex-col w-full gap-4'>
                               <article className='text-md text-secondary font-semibold text-start italic'>
-                                    Hello, I am Samrat Mallick, a dedicated Computer Science & Engineering student at Gargi Memorial Institute of Technology, set to graduate in 2026. My passion lies in web development, where I aim to craft innovative solutions that enhance user experiences through elegant design and seamless functionality. With a creative mindset and a commitment to continuous learning, I am eager to tackle new challenges and opportunities in the tech industry. My expertise encompasses a strong foundation in web development technologies, including HTML, CSS, JavaScript, and modern frameworks such as React.js. I have successfully applied these skills in various projects, transforming ideas into engaging and functional designs that meet user needs. Looking ahead, I aspire to contribute significantly to the intersection of technology and design, creating digital experiences that inspire and engage users worldwide. Beyond my professional pursuits, I enjoy immersing myself in films and video games, believing that entertainment and lifelong learning are crucial for personal and professional growth.
+                                    I am a passionate and driven web developer currently pursuing a Bachelors Of Technology in
+                                    Computer Science and Engineering from Gargi Memorial Institute of Technology. As a third-year
+                                    student, I have developed a solid foundation in programming languages such as C, Java, and
+                                    JavaScript. I am proficient in building modern web applications using ReactJS, ExpressJS, Node.js,
+                                    and MongoDB, along with styling using TailwindCSS. With a keen interest in web development, I am
+                                    eager to apply my skills in real-world projects and continue expanding my knowledge in the field. As
+                                    a fresher, I am open to learning and contributing to innovative development teams.
                               </article>
                               <div className="w-full">
                                     <Skills />
