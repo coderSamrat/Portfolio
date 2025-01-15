@@ -99,7 +99,7 @@ const ContactPage = () => {
                                           <FontAwesomeIcon icon={faFacebookF} />
                                     </Link>
                                     <Link
-                                          to="https://www.instagram.com/codersamrat/"
+                                          to="https://www.instagram.com/coder_samrat/"
                                           target="_blank"
                                           aria-label="Instagram"
                                           className="md:w-12 w-8 md:h-12 h-8 rounded-full flex items-center justify-center shadow-3xl hover:shadow-5xl transition-shadow duration-300"
