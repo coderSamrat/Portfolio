@@ -6,11 +6,12 @@ import technology_5 from './technology_5.png';
 import technology_6 from './technology_6.png';
 import technology_7 from './technology_7.png';
 import technology_8 from './technology_8.png';
-import technology_9 from './technology_9.jpg';
+import technology_9 from './technology_9.png';
 import technology_10 from './technology_10.png';
 import technology_11 from './technology_11.png';
-import technology_12 from './technology_12.png';
+import technology_12 from './technology_12.jpg';
 import technology_13 from './technology_13.png';
+import technology_14 from './technology_14.png';
 
 const technology = [
       {
@@ -42,6 +43,14 @@ const technology = [
             image: technology_7
       },
       {
+            id: 8,
+            image: technology_8
+      },
+      {
+            id: 9,
+            image: technology_9
+      },
+      {
             id: 10,
             image: technology_10
       },
@@ -54,16 +63,12 @@ const technology = [
             image: technology_12
       },
       {
-            id: 8,
-            image: technology_8
-      },
-      {
             id: 13,
             image: technology_13
       },
       {
-            id: 9,
-            image: technology_9
+            id: 14,
+            image: technology_14
       },
 ];
 export default technology;
