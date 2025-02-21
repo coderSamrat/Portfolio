@@ -4,7 +4,6 @@ import Logo from './Logo';
 import { ContactBtn } from '../index.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Spinner from './Spinner';
 
 const Header = () => {
       const links = [
@@ -13,25 +12,20 @@ const Header = () => {
       ];
 
       const [isMenuOpen, setIsMenuOpen] = useState(false);
-      const [isLoading, setIsLoading] = useState(false);
       const navigate = useNavigate();
 
       const toggleMenu = () => {
             setIsMenuOpen(!isMenuOpen);
       };
 
-      const handleNavigation = async (link) => {
-            setIsLoading(true);
+      const handleNavigation = (link) => {
             if (isMenuOpen) toggleMenu();
-            await new Promise(resolve => setTimeout(resolve, 500));
             navigate(link);
             window.scrollTo(0, 0);
-            setIsLoading(false);
       };
 
       return (
             <>
-                  {isLoading && <Spinner />}
                   <header className='sticky top-0 right-0 left-0 w-full md:px-8 px-2 py-4 border-b-2 border-b-secondary gap-2 flex justify-between items-center select-none z-50 bg-primary'>
                         <div>
                               <Logo />
