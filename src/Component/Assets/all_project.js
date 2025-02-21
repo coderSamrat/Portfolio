@@ -10,6 +10,7 @@ import work9 from '../Assets/work9.png';
 import work10 from '../Assets/work10.jpg';
 import work11 from '../Assets/work11.png';
 import work12 from '../Assets/work12.jpg';
+import work13 from '../Assets/work13.png';
 
 const all_projects = [
       {
@@ -139,6 +140,16 @@ const all_projects = [
             tools: "React js, Vite, Tailwind CSS",
             github: 'https://github.com/coderSamrat/ToDo_App', 
             live: 'https://to-do-app-six-sand.vercel.app/'
+      },
+      {
+            id: 14,
+            name: 'Notes',
+            sub_name: 'Online ToDo Application',
+            image: work13,
+            description: 'A to-do application that allows users to manage their tasks.',
+            tools: "React js, Vite, Tailwind CSS, Express js, MongoDB, Node JS",
+            github: 'https://github.com/coderSamrat/mern-todo-app', 
+            live: 'https://mern-todo-app-frontend-ytwe.onrender.com/'
       }
 ];
 

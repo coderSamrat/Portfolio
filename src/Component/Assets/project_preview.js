@@ -1,7 +1,7 @@
 import work2 from '../Assets/work2.jpg';
 import work4 from '../Assets/work4.jpg';
 import work9 from '../Assets/work9.png';
-import work12 from '../Assets/work12.jpg';
+import work13 from '../Assets/work13.png';
 
 const project_preview = [
 
@@ -36,14 +36,14 @@ const project_preview = [
             live: 'https://shipt-e-commerce.vercel.app/'
       },
       {
-            id: 13,
-            name: 'Todo List',
+            id: 14,
+            name: 'Notes',
             sub_name: 'Online ToDo Application',
-            image: work12,
+            image: work13,
             description: 'A to-do application that allows users to manage their tasks.',
-            tools: "React js, Vite, Tailwind CSS",
-            github: 'https://github.com/coderSamrat/ToDo_App', 
-            live: 'https://to-do-app-six-sand.vercel.app/'
+            tools: "React js, Vite, Tailwind CSS, Express js, MongoDB, Node JS",
+            github: 'https://github.com/coderSamrat/mern-todo-app',
+            live: 'https://mern-todo-app-frontend-ytwe.onrender.com/'
       }
 ];
 
